@@ -23,6 +23,7 @@ const Counter = () => {
     setSeconds(newSeconds);
   }
   
+  
   return (
     <React.Fragment>
       <form type="submit">
@@ -31,7 +32,8 @@ const Counter = () => {
           type="number" 
           name="minutes" 
           id="minutes" 
-          max="60" 
+          max="60"
+          min="0"
           value={newMinutes} 
           onChange={handleMinutesChange}
         />
@@ -41,7 +43,8 @@ const Counter = () => {
           type="number" 
           name="seconds" 
           id="seconds" 
-          max="60" 
+          max="60"
+          min="0"
           value={newSeconds}
           onChange={handleSecondsChange}  
         />
