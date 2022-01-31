@@ -1,14 +1,13 @@
 import React from 'react';
 import './App.css';
 import Header from './header';
-import Counter from './counter';
+import CountContainer from './countcontainer';
 
 function App() {
   return (
     <React.Fragment>
       <Header />
-        <h1>App works</h1>
-      <Counter />
+      <CountContainer />
     </React.Fragment>
   );
 }
