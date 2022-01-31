@@ -1,21 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 
+import { TimeProvider } from './TimeContext';
 import Counter from './counter';
 import Countdown from './countdown';
 
-export const TimeContext = React.createContext();
-
 const CountContainer = () => {
   
-  const [minutes, setMinutes] = useState(10);
-  const [seconds, setSeconds] = useState(10);
-  
   return(
-    <TimeContext.Provider value={{minutes, setMinutes, seconds, setSeconds}}>
+    <TimeProvider>
       <Counter />
       <Countdown />
-    </TimeContext.Provider>
-    
+    </TimeProvider>
     )
 }
 

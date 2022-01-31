@@ -1,50 +1,42 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { TimeContext } from './countcontainer';
+import { useTime, useTimeUpdate, handleSubmit } from './TimeContext';
+
 
 const Counter = () => {
   
-  const { minutes, setMinutes } = useContext(TimeContext);
-  const { seconds, setSeconds } = useContext(TimeContext);
-  
-  const [newMinutes, setNewMinutes] = useState(minutes);
-  const [newSeconds, setNewSeconds] = useState(seconds);
+  const [seconds, setSeconds] = useContext(TimeContext);
+  const [minutes, setMinutes] = useContext(TimeContext);
 
   const handleMinutesChange = (e) => {
-    setNewMinutes(e.target.value);
+    setMinutes(e.target.value);
   }
   
   const handleSecondsChange = (e) => {
-    setNewSeconds(e.target.value);
+    setSeconds(e.target.value);
   }
-  
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setMinutes(newMinutes);
-    setSeconds(newSeconds);
-  }
-  
   
   return (
     <React.Fragment>
       <form type="submit">
-        <label for="minutes">minutes</label>
+        <label htmlFor="minutes">minutes</label>
         <input 
           type="number" 
           name="minutes" 
           id="minutes" 
           max="60"
           min="0"
-          value={newMinutes} 
+          value={minutes} 
           onChange={handleMinutesChange}
         />
-        <label for="seconds">seconds</label>
+        <label htmlFor="seconds">seconds</label>
         <input 
           type="number" 
           name="seconds" 
           id="seconds" 
           max="59"
           min="0"
-          value={newSeconds}
+          value={seconds}
           onChange={handleSecondsChange}  
         />
       </form>
