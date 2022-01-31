@@ -37,18 +37,16 @@ const Counter = () => {
           value={newMinutes} 
           onChange={handleMinutesChange}
         />
-        {minutes}
         <label for="seconds">seconds</label>
         <input 
           type="number" 
           name="seconds" 
           id="seconds" 
-          max="60"
+          max="59"
           min="0"
           value={newSeconds}
           onChange={handleSecondsChange}  
         />
-        {seconds}
       </form>
       <button type="submit" onClick={handleSubmit}>Start</button>
     </React.Fragment>
